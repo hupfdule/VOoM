@@ -145,6 +145,11 @@ if !exists('g:voom_tab_key')
     let g:voom_tab_key = '<Tab>'
 endif
 
+" Whether to hide line numbers
+if !exists('g:voom_hide_line_numbers')
+    let g:hide_line_numbers = 1
+endif
+
 " g:voom_rstrip_chars_{filetype} -- string with chars to strip from right side
 " of Tree headlines for Body 'filetype' {filetype}.
 " If defined, these will be used instead of 'commentstring' chars.
@@ -972,6 +977,10 @@ func! voom#TreeConfigWin() "{{{2
     setl cul nocuc nowrap nolist
     "setl winfixheight
     setl winfixwidth
+    if g:voom_hide_line_numbers
+        setl nonumber
+        setl norelativenumber
+    endif
     let w:voom_tree = 'VOoM'
 endfunc
 

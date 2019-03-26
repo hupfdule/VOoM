@@ -742,6 +742,12 @@ g:voom_log_height   ~
     Example: >
         let g:voom_log_height = 15
 
+g:voom_hide_line_numbers   ~
+    Whether to hide line numbers in the Tree window.
+    Default: 1
+    Example: >
+        let g:voom_hide_line_numbers = 0
+
 ==============================================================================
 Tree/Body shuttle keys   [[[2~
                                                  *voom-shuttle-keys*
