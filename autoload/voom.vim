@@ -105,62 +105,62 @@ endif
 " Where Tree window is created: 'left', 'right', 'top', 'bottom'
 " This is relative to the current window.
 if !exists('g:voom_tree_placement')
-    let g:voom_tree_placement = 'left'
+  let g:voom_tree_placement = 'left'
 endif
 " Initial Tree window width.
 if !exists('g:voom_tree_width')
-    let g:voom_tree_width = 30
+  let g:voom_tree_width = 30
 endif
 " Initial Tree window height.
 if !exists('g:voom_tree_height')
-    let g:voom_tree_height = 12
+  let g:voom_tree_height = 12
 endif
 
 " Where Log window is created: 'left', 'right', 'top', 'bottom'
 " This is far left/right/top/bottom.
 if !exists('g:voom_log_placement')
-    let g:voom_log_placement = 'bottom'
+  let g:voom_log_placement = 'bottom'
 endif
 " Initial Log window width.
 if !exists('g:voom_log_width')
-    let g:voom_log_width = 30
+  let g:voom_log_width = 30
 endif
 " Initial Log window height.
 if !exists('g:voom_log_height')
-    let g:voom_log_height = 12
+  let g:voom_log_height = 12
 endif
 
 " Verify outline after outline operations.
 if !exists('g:voom_verify_oop')
-    let g:voom_verify_oop = 1
+  let g:voom_verify_oop = 1
 endif
 
 " Which key to map to Select-Node-and-Shuttle-between-Body/Tree
 if !exists('g:voom_return_key')
-    let g:voom_return_key = '<Return>'
+  let g:voom_return_key = '<Return>'
 endif
 
 " Which key to map to Shuttle-between-Body/Tree
 if !exists('g:voom_tab_key')
-    let g:voom_tab_key = '<Tab>'
+  let g:voom_tab_key = '<Tab>'
 endif
 
 " Whether to hide line numbers
 if !exists('g:voom_hide_line_numbers')
-    let g:hide_line_numbers = 1
+  let g:voom_hide_line_numbers = 1
 endif
 
 " g:voom_rstrip_chars_{filetype} -- string with chars to strip from right side
 " of Tree headlines for Body 'filetype' {filetype}.
 " If defined, these will be used instead of 'commentstring' chars.
 if !exists('g:voom_rstrip_chars_vim')
-    let g:voom_rstrip_chars_vim = "\"# \t"
+  let g:voom_rstrip_chars_vim = "\"# \t"
 endif
 if !exists('g:voom_rstrip_chars_text')
-    let g:voom_rstrip_chars_text = " \t"
+  let g:voom_rstrip_chars_text = " \t"
 endif
 if !exists('g:voom_rstrip_chars_help')
-    let g:voom_rstrip_chars_help = " \t"
+  let g:voom_rstrip_chars_help = " \t"
 endif
 
 
@@ -183,11 +183,11 @@ com! -nargs=? Voominfo call voom#Voominfo(<q-args>)
 
 """ development helpers
 if exists('g:voom_create_devel_commands')
-    " reload autoload/voom.vim (outlines are preserved)
-    com! VoomReloadVim exe 'so '.s:script_path
-    " wipe out Trees, PyLog, delete Python modules; reload autoload/voom.vim, voom_vim.py
-    " Note: simply reloading Python modules is pointless since v4.2
-    com! VoomReloadAll call voom#ReloadAllPre() | exe 'so '.s:script_path
+  " reload autoload/voom.vim (outlines are preserved)
+  com! VoomReloadVim exe 'so '.s:script_path
+  " wipe out Trees, PyLog, delete Python modules; reload autoload/voom.vim, voom_vim.py
+  " Note: simply reloading Python modules is pointless since v4.2
+  com! VoomReloadAll call voom#ReloadAllPre() | exe 'so '.s:script_path
 endif
 
 
@@ -977,6 +977,7 @@ func! voom#TreeConfigWin() "{{{2
     setl cul nocuc nowrap nolist
     "setl winfixheight
     setl winfixwidth
+    setl statusline=VOoM
     if g:voom_hide_line_numbers
         setl nonumber
         setl norelativenumber
