@@ -22,3 +22,11 @@ com! -nargs=? Voomexec call voom#Exec(<q-args>)
 au BufFilePost __PyLog__ call voom#LogSessionLoad()
 au BufFilePost *_VOOM\d\+ call voom#TreeSessionLoad()
 
+let g:voom_ft_modes = {
+  \ 'asciidoc' : 'asciidoc',
+  \ 'html'     : 'html',
+  \ 'markdown' : 'markdown',
+  \ 'python'   : 'python',
+  \ 'rst'      : 'rest',
+  \ 'tex'      : 'latex'
+\ }
